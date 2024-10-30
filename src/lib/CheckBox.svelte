@@ -26,6 +26,7 @@
         padding: 0;
         background: white;
         border: 1px solid #ABADB3;
+        outline: none;
         &:hover, &:focus-visible {
             border-color: #569DE5;
         }

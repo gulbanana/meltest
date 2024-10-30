@@ -7,13 +7,13 @@
     import { createLabel, melt } from '@melt-ui/svelte'
 
     let id = `field_${counter++}`;
-    let props: { label: string, children: Snippet<[string]> } = $props();
+    let props: { label: string, content: Snippet<[string]> } = $props();
     let { elements: { root } } = createLabel();
 </script>
 
 <div class="field">
     <label use:melt={$root} for={id}>{props.label}:</label>
-    {@render props.children(id)}
+    {@render props.content(id)}
 </div>
 
 <style>

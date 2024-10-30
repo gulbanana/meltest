@@ -1,25 +1,25 @@
 <script lang="ts">
     import { createDatePicker, melt } from '@melt-ui/svelte'
-    import { CalendarDate } from '@internationalized/date'
+    import type { DateValue } from '@internationalized/date'
 
-    let props: { id: string } = $props();
+    let props: { id: string, value: DateValue } = $props();
     let {
         elements: {
-        calendar,
-        cell,
-        content,
-        field,
-        grid,
-        heading,
-        label,
-        nextButton,
-        prevButton,
-        segment,
-        trigger
+            calendar,
+            cell,
+            content,
+            field,
+            grid,
+            heading,
+            nextButton,
+            prevButton,
+            segment,
+            trigger,
+            hiddenInput
         },
         states: { months, headingValue, weekdays, segmentContents, value },
         helpers: { isDateDisabled, isDateUnavailable }
-    } = createDatePicker({defaultValue: new CalendarDate(1984, 10, 13), locale: "en-AU" });
+    } = createDatePicker({defaultValue: props.value, locale: "en-AU" });
 </script>
 
 <div use:melt={$field} class="box">
@@ -28,7 +28,7 @@
             {seg.value}
         </div>
     {/each}
-
+    <input use:melt={$hiddenInput} id={props.id} />
     <button use:melt={$trigger} class="picker">
         📅
     </button>

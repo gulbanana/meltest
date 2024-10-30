@@ -13,6 +13,7 @@
         padding: 20px;
         display: flex;
         flex-direction: row;
+        align-items: start;
     }
 
     .panel > :global(*) {

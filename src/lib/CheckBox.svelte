@@ -10,19 +10,27 @@
     });
 </script>
 
-<button use:melt={$root}>
-    <svg viewBox="0 0 200 200">            
-        {#if $isChecked}
-        <path d="M30,122 L80,170 L170,20" stroke-linecap="round"/>
-        {/if}
-    </svg>
-    <input use:melt={$input} id="{props.id}" />
-</button>
+<div class="wrapper">
+    <button use:melt={$root}>
+        <svg viewBox="0 0 130 120">            
+            {#if $isChecked}
+            <path d="M20,55 L55,85 L100,15"/>
+            {/if}
+        </svg>
+        <input use:melt={$input} id="{props.id}" />
+    </button>
+</div>
 
 <style>
-    button {
-        width: 22px;
+    .wrapper {
         height: 22px;
+        display: flex;        
+        align-items: center;
+    }
+    
+    button {
+        width: 14px;
+        height: 13px;
         padding: 0;
         background: white;
         border: 1px solid #ABADB3;
@@ -33,10 +41,10 @@
     }
 
     svg {
-        width: 20px;
-        height: 20px;
+        width: 13px;
+        height: 12px;
         stroke: #000;
-        stroke-width: 25;
+        stroke-width: 20;
         fill: none;
     }
 </style>

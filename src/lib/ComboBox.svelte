@@ -37,13 +37,13 @@
 </script>
 
 <div class="layout">
-    <input use:melt={$input} id={id} placeholder="number">
+    <input use:melt={$input} id={id}>
 
     <svg viewBox="0 0 100 100">            
         {#if $open}
-        <path d="M30,40 L50,60 L70,40" x1="40" y1="30" x2="60" y2="50" />
+        <path d="M30,40 L50,60 L70,40" />
         {:else}
-        <path d="M40,30 L60,50 L40,70" x1="40" y1="30" x2="60" y2="50" />
+        <path d="M60,30 L40,50 L60,70" />
         {/if}
     </svg>
 </div>

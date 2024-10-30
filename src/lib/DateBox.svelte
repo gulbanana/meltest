@@ -2,7 +2,7 @@
     import { createDatePicker, melt } from '@melt-ui/svelte'
     import type { DateValue } from '@internationalized/date'
 
-    let props: { id: string, value: DateValue } = $props();
+    let props: { id: string, value?: DateValue } = $props();
     let {
         elements: {
             calendar,
@@ -29,6 +29,7 @@
         </div>
     {/each}
     <input use:melt={$hiddenInput} id={props.id} />
+    <div class="gap"></div>
     <button use:melt={$trigger} class="picker">
         📅
     </button>
@@ -96,7 +97,7 @@
         display: flex;
         align-items: center;
 
-        max-width: 90px;
+        max-width: 100px;
         padding: 2px;
     }
     
@@ -105,6 +106,10 @@
         &:focus-visible {
             background-color: #ABADB3;
         }
+    }
+
+    .gap {
+        flex: 1;
     }
 
     .picker {

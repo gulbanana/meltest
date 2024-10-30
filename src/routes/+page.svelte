@@ -23,14 +23,19 @@
         </Field>
     </Section>
     <Section header="Exotic Fields">
+        <Field label="Birthday">
+            {#snippet content(id)}
+                <DateBox {id} value={new CalendarDate(1984, 10, 13)} />
+            {/snippet}
+        </Field>
         <Field label="Is Checkbox">
             {#snippet content(id)}
                 <CheckBox {id} value={true} />
             {/snippet}
         </Field>
-        <Field label="Birthday">
+        <Field label="Nullable Date">
             {#snippet content(id)}
-                <DateBox {id} value={new CalendarDate(1984, 10, 13)} />
+                <DateBox {id} />
             {/snippet}
         </Field>
         <Field label="Entity Selector">

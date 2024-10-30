@@ -1,0 +1,7 @@
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
+body {
+    background: #f5f5f5;
+    --gradient-border: linear-gradient(#A3AEB9, #8399A9 37.5%, #718597 75%, #617584 100%);
+    --gradient-bar: linear-gradient(to bottom, #686F70, #000000);
+}
